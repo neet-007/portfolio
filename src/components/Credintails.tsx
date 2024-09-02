@@ -3,9 +3,10 @@ import { useThemeContext } from "../context/themeContext";
 import { Button } from "./Button";
 import { useFadeIn } from "../hooks/fadeIn";
 import { PatchCheck } from "./PatchCheck";
+import { CREDINTAILS } from "../constants";
 
-const Credential: FC<ComponentProps<"div"> & { title: string, about: string, img: string, theme: "light" | "dark" }> = ({
-  title, about, theme
+const Credential: FC<ComponentProps<"div"> & { title: string, img: string, theme: "light" | "dark" }> = ({
+  title, img, theme
 }) => {
 
   return (
@@ -18,10 +19,7 @@ const Credential: FC<ComponentProps<"div"> & { title: string, about: string, img
         {title}
       </div>
       <div>
-        {about}
-      </div>
-      <div>
-        <img src="/profile1.jpg" alt="" className="b-1-solid-black b-radius-75" />
+        <img src={img} alt="" className="b-1-solid-black b-radius-75" />
       </div>
       <a href="" className="p-y-2 ">
         <Button theme={theme} className="animate-bg-color flex align-items-center gap-1">
@@ -44,17 +42,8 @@ export const Credintails: FC<ComponentProps<"div">> = () => {
     <div id="credintails" className="flex f-d-column">
       <div className="bold-800 cap f-size-m align-self-center">Credintails</div>
       <div className="grid g-t-columns-4-1fr gap-2 p-2 place-items-center" ref={containerRef}>
-        {[
-          { title: "title1", about: "about1", img: "" },
-          { title: "title1", about: "about1", img: "" },
-          { title: "title1", about: "about1", img: "" },
-          { title: "title1", about: "about1", img: "" },
-          { title: "title1", about: "about1", img: "" },
-          { title: "title1", about: "about1", img: "" },
-          { title: "title1", about: "about1", img: "" },
-          { title: "title1", about: "about1", img: "" },
-        ].map((v, i) => (
-          <Credential key={`project-${v.title}-${i}`} title={v.title} about={v.about}
+        {CREDINTAILS.map((v, i) => (
+          <Credential key={`project-${v.title}-${i}`} title={v.title}
             img={v.img} theme={theme} />
         ))}
       </div>
