@@ -3,6 +3,7 @@ import { PROJECTS } from "../constants";
 import { useThemeContext } from "../context/themeContext";
 import { Button } from "./Button";
 import { useFadeIn } from "../hooks/fadeIn";
+import { Github } from "./Github";
 
 const Project: FC<ComponentProps<"div"> & { title: string, about: string, img: string, theme: "light" | "dark" }> = ({
   title, about, theme
@@ -20,15 +21,16 @@ const Project: FC<ComponentProps<"div"> & { title: string, about: string, img: s
       <div>
         <img src="/profile1.jpg" alt="" className="b-1-solid-black b-radius-75" />
       </div>
-      <div className="flex justify-content-between p-x-4 p-y-2">
+      <div className="flex justify-content-between align-items-center p-x-4 p-y-2">
         <a href="" >
-          <Button theme={theme} className="animate-bg-color">
-            github
+          <Button theme={theme} className="animate-bg-color flex align-items-center gap-1">
+            <Github iconWidth="20" iconHeight="20" theme={theme} util />
+            <p>github</p>
           </Button>
         </a>
         <a href="" >
           <Button theme={theme} className="animate-bg-color">
-            link
+            <p>link</p>
           </Button>
         </a>
       </div>
@@ -45,7 +47,7 @@ export const Projects: FC<ComponentProps<"div">> = () => {
   useFadeIn(containerRef);
 
   return (
-    <div className="flex f-d-column gap-2">
+    <div id="projects" className="flex f-d-column gap-2">
       <div className="bold-800 cap f-size-m align-self-center">projects</div>
       <div className="grid g-t-columns-3-1fr gap-2 p-2 place-items-center" ref={containerRef}>
         {PROJECTS.map((v, i) => {
@@ -59,7 +61,7 @@ export const Projects: FC<ComponentProps<"div">> = () => {
       <Button className="button align-self-center w-fit-content h-auto"
         theme={theme}
         onClick={() => setNumElems(prev => prev * 2)}>
-        load more
+        <p>load more</p>
       </Button>
     </div>
   )

@@ -2,6 +2,7 @@ import React, { FC, ComponentProps, useRef } from "react";
 import { useThemeContext } from "../context/themeContext";
 import { Button } from "./Button";
 import { useFadeIn } from "../hooks/fadeIn";
+import { PatchCheck } from "./PatchCheck";
 
 const Credential: FC<ComponentProps<"div"> & { title: string, about: string, img: string, theme: "light" | "dark" }> = ({
   title, about, theme
@@ -23,8 +24,9 @@ const Credential: FC<ComponentProps<"div"> & { title: string, about: string, img
         <img src="/profile1.jpg" alt="" className="b-1-solid-black b-radius-75" />
       </div>
       <a href="" className="p-y-2 ">
-        <Button theme={theme} className="animate-bg-color">
-          verify
+        <Button theme={theme} className="animate-bg-color flex align-items-center gap-1">
+          <PatchCheck iconHeight="20" iconWidth="20" theme={theme} util />
+          <p>verify</p>
         </Button>
       </a>
     </div>
@@ -39,7 +41,7 @@ export const Credintails: FC<ComponentProps<"div">> = () => {
   useFadeIn(containerRef);
 
   return (
-    <div className="flex f-d-column">
+    <div id="credintails" className="flex f-d-column">
       <div className="bold-800 cap f-size-m align-self-center">Credintails</div>
       <div className="grid g-t-columns-4-1fr gap-2 p-2 place-items-center" ref={containerRef}>
         {[
