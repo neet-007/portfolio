@@ -4,10 +4,10 @@
   font-family: "IBM Plex Sans", system-ui, serif;
   --dark-primary: #0a0908;
   --dark-secondary: #fdfffc;
-  --dark-gray: #2d3142;
+  --dark-gray: #212529;
   --light-primary: #fdfffc;
   --light-secondary: #0a0908;
-  --light-gray: #bfc0c0;
+  --light-gray: #e9ecef;
 }
 
 *,
@@ -109,6 +109,26 @@ a {
 
 .button:disabled {
   cursor: not-allowed;
+}
+
+.b-1-solid-black {
+  border: 1px solid black;
+}
+
+.b-radius-25 {
+  border-radius: 0.25rem;
+}
+
+.b-radius-50 {
+  border-radius: 0.50rem;
+}
+
+.b-radius-75 {
+  border-radius: 0.75rem;
+}
+
+.b-radius-1 {
+  border-radius: 1rem;
 }
 
 .flex {
@@ -381,6 +401,21 @@ a {
   padding-top: 4.5rem;
   padding-bottom: 4.5rem;
 }
+
+.fade-in {
+  transition: opacity 500ms ease-in-out, transform 400ms ease-in-out;
+}
+
+.fade-in[data-appear="false"] {
+  transform: translateY(-40%);
+  opacity: 0;
+}
+
+.fade-in[data-appear="true"] {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
 
 @media only screen and (min-width: 700px) and (max-width:999px) {
   .g-t-columns-3-1fr {
