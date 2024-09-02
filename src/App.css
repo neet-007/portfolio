@@ -19,11 +19,15 @@
 }
 
 .animate-bg {
-  transition: background-color 500ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
 }
 
 .animate-color {
-  transition: color 500ms ease-in-out;
+  transition: color 200ms ease-in-out;
+}
+
+.animate-bg-color {
+  transition: background-color 400ms ease-in-out, color 400ms ease-in-out;
 }
 
 .bg-dark-primary {
@@ -96,10 +100,11 @@ a {
 }
 
 .button {
-  background: none;
   border: 1px solid black;
+  border-radius: 0.25rem;
   padding: 0.5rem 1.5rem;
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 .button:disabled {
@@ -156,6 +161,10 @@ a {
 
 .justify-content-center {
   justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
 }
 
 .justify-self-center {
@@ -280,6 +289,97 @@ a {
 
 .p-9 {
   padding: 4.5rem;
+}
+
+.p-x-1 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.p-x-2 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.p-x-3 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.p-x-4 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.p-x-5 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.p-x-6 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.p-x-7 {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+
+.p-x-8 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.p-x-9 {
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+}
+
+/* Padding Y-axis */
+.p-y-1 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.p-y-2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.p-y-3 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.p-y-4 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.p-y-5 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.p-y-6 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.p-y-7 {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.p-y-8 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.p-y-9 {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
 }
 
 @media only screen and (min-width: 700px) and (max-width:999px) {

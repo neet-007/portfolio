@@ -8,7 +8,7 @@ import { useThemeContext } from './context/themeContext'
 function App() {
   const { theme, toggleTheme } = useThemeContext();
   return (
-    <div className={`flex f-d-column gap-7 animate-bg animate-color ${theme === "light" ?
+    <div className={`flex f-d-column gap-7 animate-bg-color ${theme === "light" ?
       "bg-light-primary color-ligth-secondary" : "bg-dark-primary color-dark-secondary"}`}>
       <BriefAboutMe />
       <Projects />
