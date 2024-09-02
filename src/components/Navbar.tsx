@@ -40,7 +40,6 @@ export const Navbar: React.FC<ComponentProps<"nav">> = () => {
   const { prevScroll, currentScroll } = useScrollTracker();
   const navRef = useRef<HTMLDivElement>(null);
 
-  console.log(prevScroll, currentScroll)
   /*
   useEffect(() => {
     if (!navRef.current) {
