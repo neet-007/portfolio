@@ -75,8 +75,8 @@ export const Contact: FC<ComponentProps<"div">> = () => {
   const { theme } = useThemeContext();
 
   return (
-    <div id="contact" className="flex w-100 align-items-start p-2">
-      <div className="f-basis-50 flex f-d-column gap-2" >
+    <div id="contact" className="grid gap-2 g-t-columns-2-1fr w-100 align-items-start p-2">
+      <div className="flex f-d-column gap-2" >
         <div className="flex f-d-column gap-2 cap">
           <p>social media</p>
           <ul className="flex gap-2">
@@ -98,13 +98,13 @@ export const Contact: FC<ComponentProps<"div">> = () => {
           </ul>
         </div>
         <div className="flex f-d-column gap-2">
-          <p>other</p>
+          <p className="cap">phone</p>
           <ul>
             <li>+966540098826</li>
           </ul>
         </div>
       </div>
-      <div className="f-basis-50">
+      <div>
         <p className="cap">email me</p>
         <EmailForm theme={theme} />
       </div>

@@ -5,39 +5,42 @@ import { Button } from "./Button";
 import { useFadeIn } from "../hooks/fadeIn";
 import { Github } from "./Github";
 
-const Project: FC<ComponentProps<"div"> & { title: string, about: string, img: string, theme: "light" | "dark" }> = ({
-  title, about, theme
+const Project: FC<ComponentProps<"div"> & {
+  title: string, about: string, img: string,
+  theme: "light" | "dark", appear: string
+}> = ({
+  title, about, theme, appear
 }) => {
 
-  return (
-    <div className={`flex f-d-column gap-1 w-100 p-1 b-radius-1 p-4
+    return (
+      <div className={`flex f-d-column gap-1 w-100 p-1 b-radius-1 p-4
                     ${theme === "light" ? "bg-light-gray" :
-        "bg-dark-gray"}
-        fade-in`} data-appear="false">
-      <div className="f-size-sm cap">
-        {title}
+          "bg-dark-gray"}
+        fade-in`} data-appear={appear}>
+        <div className="f-size-sm cap">
+          {title}
+        </div>
+        <p dangerouslySetInnerHTML={{ __html: about }}></p>
+        <div>
+          <img src="/profile1.jpg" alt="" className="b-1-solid-black b-radius-75" />
+        </div>
+        <div className="flex justify-content-between align-items-center p-x-4 p-y-2">
+          <a href="" >
+            <Button theme={theme} className="animate-bg-color flex align-items-center gap-1">
+              <Github iconWidth="20" iconHeight="20" theme={theme} util />
+              <p>github</p>
+            </Button>
+          </a>
+          <a href="" >
+            <Button theme={theme} className="animate-bg-color">
+              <p>link</p>
+            </Button>
+          </a>
+        </div>
       </div>
-      <p dangerouslySetInnerHTML={{ __html: about }}></p>
-      <div>
-        <img src="/profile1.jpg" alt="" className="b-1-solid-black b-radius-75" />
-      </div>
-      <div className="flex justify-content-between align-items-center p-x-4 p-y-2">
-        <a href="" >
-          <Button theme={theme} className="animate-bg-color flex align-items-center gap-1">
-            <Github iconWidth="20" iconHeight="20" theme={theme} util />
-            <p>github</p>
-          </Button>
-        </a>
-        <a href="" >
-          <Button theme={theme} className="animate-bg-color">
-            <p>link</p>
-          </Button>
-        </a>
-      </div>
-    </div>
 
-  )
-}
+    )
+  }
 
 export const Projects: FC<ComponentProps<"div">> = () => {
   const [numElems, setNumElems] = useState<number>(3);
@@ -55,7 +58,7 @@ export const Projects: FC<ComponentProps<"div">> = () => {
             return null
           }
           return <Project key={`project-${v.title}-${i}`} title={v.title} about={v.about}
-            img={v.img} theme={theme} />
+            img={v.img} theme={theme} appear="false" />
         })}
       </div>
       <Button className="button align-self-center w-fit-content h-auto"

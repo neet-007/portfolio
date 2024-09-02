@@ -123,6 +123,18 @@ a {
   color: inherit;
 }
 
+nav {
+  transition: top 100ms ease-in-out;
+}
+
+nav[data-hide="true"] {
+  top: -100%;
+}
+
+nav[data-hide="false"] {
+  top: 0;
+}
+
 .button {
   border: 1px solid black;
   border-radius: 0.25rem;
@@ -132,6 +144,7 @@ a {
 }
 
 .button:disabled {
+  opacity: 50%;
   cursor: not-allowed;
 }
 
@@ -157,6 +170,10 @@ a {
 
 .flex {
   display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap
 }
 
 .f-d-column {
@@ -233,6 +250,10 @@ a {
 
 .place-items-center {
   place-items: center;
+}
+
+.g-t-columns-2-1fr {
+  grid-template-columns: repeat(1, 1fr);
 }
 
 .g-t-columns-3-1fr {
@@ -496,6 +517,10 @@ a {
 }
 
 @media only screen and (min-width: 700px) and (max-width:999px) {
+  .g-t-columns-2-1fr {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .g-t-columns-3-1fr {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -506,6 +531,10 @@ a {
 }
 
 @media only screen and (min-width: 1000px) {
+  .g-t-columns-2-1fr {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .g-t-columns-3-1fr {
     grid-template-columns: repeat(3, 1fr);
   }

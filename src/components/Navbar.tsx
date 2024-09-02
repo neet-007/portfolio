@@ -1,8 +1,8 @@
 import React, { ComponentProps, useEffect, useRef } from "react";
 import { useThemeContext } from "../context/themeContext";
-import { useScrollTracker } from "../hooks/scrollTracker";
 import { Moon } from "./Moon.tsx";
 import { Sun } from "./Sun.tsx";
+import { useScrollDetector } from "../hooks/scrollDetector.ts";
 
 const ThemeSwitch: React.FC<ComponentProps<"div"> & { theme: "light" | "dark", toggleTheme: () => void }> = ({
   theme, toggleTheme, ...props }) => {
@@ -37,29 +37,29 @@ const ThemeSwitch: React.FC<ComponentProps<"div"> & { theme: "light" | "dark", t
 
 export const Navbar: React.FC<ComponentProps<"nav">> = () => {
   const { theme, toggleTheme } = useThemeContext();
-  const { prevScroll, currentScroll } = useScrollTracker();
+  const isScrolling = useScrollDetector();
   const navRef = useRef<HTMLDivElement>(null);
 
-  /*
   useEffect(() => {
     if (!navRef.current) {
       return
     }
-    if (prevScroll > currentScroll) {
-      navRef.current.style.opacity = "1"
-    } else {
 
-      navRef.current.style.opacity = "0"
+    if (isScrolling) {
+      navRef.current.setAttribute("data-hide", "true")
+    } else {
+      navRef.current.setAttribute("data-hide", "false")
     }
-  }, [prevScroll, currentScroll])
-*/
+
+  }, [isScrolling])
+
   return (
     <nav className={`w-60 align-self-center p-y-2 p-x-8 sticky top-0 z-index-9999 b-radius-75
         ${theme === "light" ? "bg-light-gray color-light-secondary"
         :
         "bg-dark-gray color-dark-secondary"}`}
       ref={navRef}>
-      <ul className="flex align-items-center justify-content-between">
+      <ul className="flex flex-wrap gap-2 align-items-center justify-content-between">
         <li>
           <a href="#about-me " className="text-decoration-none cap">
             about
@@ -71,7 +71,7 @@ export const Navbar: React.FC<ComponentProps<"nav">> = () => {
           </a>
         </li>
         <li>
-          <a href="#credentials" className="text-decoration-none cap">
+          <a href="#credintails" className="text-decoration-none cap">
             credentials
           </a>
         </li>
