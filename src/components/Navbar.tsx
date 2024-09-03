@@ -21,7 +21,7 @@ const ThemeSwitch: React.FC<ComponentProps<"div"> & { theme: "light" | "dark", t
   return (
     <div className="flex gap-2 align-items-center" {...props}>
       {
-        theme === "light" ?
+        theme === "dark" ?
           <Moon iconHeight="20" iconWidth="30" theme={theme} />
           :
           <Sun iconWidth="20" iconHeight="20" theme={theme} />

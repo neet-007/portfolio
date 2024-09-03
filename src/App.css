@@ -500,6 +500,10 @@ nav[data-hide="false"] {
   padding-bottom: 4.5rem;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .fade-in {}
 
 .fade-in[data-appear="false"] {

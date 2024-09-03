@@ -18,7 +18,7 @@ export const Slider: React.FC<ComponentProps<"div">> = () => {
   }, [])
 
   return (
-    <div className="align-self-center flex f-d-column gap-2">
+    <div className="align-self-center flex f-d-column gap-2 overflow-hidden">
       <p className="bold-800 cap f-size-m align-self-center">tech stack</p>
       <div className="slider-container">
         <div className="slider-slider" data-animate="false" ref={sliderRef}>
