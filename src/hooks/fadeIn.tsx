@@ -17,14 +17,19 @@ export function useFadeIn(ref: RefObject<HTMLElement>): void {
         });
       },
       {
-        threshold: 0.75,
+        threshold: 0.60,
       }
     );
 
     const children = ref.current.children;
     for (let i = 0; i < children.length; i++) {
-      // Casting children[i] to HTMLElement to satisfy TypeScript
       observer.observe(children[i] as HTMLElement);
+    }
+
+    return () => {
+      for (let i = 0; i < children.length; i++) {
+        observer.unobserve(children[i] as HTMLElement);
+      }
     }
   }, [ref]);
 }

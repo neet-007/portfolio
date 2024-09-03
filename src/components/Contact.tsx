@@ -1,4 +1,4 @@
-import React, { FC, ComponentProps, useRef, useState } from "react";
+import React, { FC, ComponentProps, useRef, useState, useEffect } from "react";
 import { Github } from "./Github";
 import { Linkedin } from "./Linkedin";
 import { Twitter } from "./Twitter";
@@ -22,6 +22,24 @@ const EmailForm: React.FC<ComponentProps<"form"> & { theme: "light" | "dark" }> 
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMesage] = useState("")
+  const [sent, setSent] = useState(false);
+
+  useEffect(() => {
+    if (!formRef.current || !sent) {
+      return
+    }
+
+    const button = formRef.current.children[formRef.current.children.length - 1].children[1];
+
+    button.setAttribute("data-visible", "true");
+
+    const timeOut = setTimeout(() => {
+      setSent(false)
+      button.setAttribute("data-visible", "false")
+    }, 2000)
+
+    return () => clearTimeout(timeOut)
+  }, [sent])
 
   let buttonDisabled = true;
 
@@ -42,10 +60,37 @@ const EmailForm: React.FC<ComponentProps<"form"> & { theme: "light" | "dark" }> 
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          setSent(true)
+          if (!formRef.current) {
+            return
+          }
+          const children = formRef.current.children;
+          //@ts-ignore
+          children[1].value = ""
+          //@ts-ignore
+          children[3].value = ""
+          //@ts-ignore
+          children[5].value = ""
+          setName("")
+          setEmail("")
+          setMesage("")
         },
         (error) => {
           console.log('FAILED...', error.text);
+          setSent(false)
+          if (!formRef.current) {
+            return
+          }
+          const children = formRef.current.children;
+          //@ts-ignore
+          children[1].value = ""
+          //@ts-ignore
+          children[3].value = ""
+          //@ts-ignore
+          children[5].value = ""
+          setName("")
+          setEmail("")
+          setMesage("")
         },
       );
   };
@@ -55,18 +100,28 @@ const EmailForm: React.FC<ComponentProps<"form"> & { theme: "light" | "dark" }> 
       className="flex f-d-column gap-1" {...props}>
       <label>Name</label>
       <input type="text" name="from_name" className="p-1"
+        placeholder="Your Name"
         onChange={e => setName(e.target.value)} />
       <label>Email</label>
       <input type="email" name="from_email" className="p-1"
+        placeholder="Email@example.com"
         onChange={e => setEmail(e.target.value)} />
       <label>Message</label>
       <textarea name="message" className="p-1"
+        placeholder="Your Message"
         onChange={e => setMesage(e.target.value)} />
 
-      <Button theme={theme} type="submit" className="w-fit-content"
-        disabled={buttonDisabled}>
-        <p className="cap">send</p>
-      </Button>
+      <div className="flex gap-2 align-items-center">
+        <Button theme={theme} type="submit" className="w-fit-content"
+          disabled={buttonDisabled}>
+          <p className="cap">send</p>
+        </Button>
+        <div className="toast-success cap" data-visible="false">
+          <p>
+            email sent successfully
+          </p>
+        </div>
+      </div>
     </form>
   );
 };
