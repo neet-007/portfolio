@@ -136,17 +136,17 @@ export const Contact: FC<ComponentProps<"div">> = () => {
           <p>social media</p>
           <ul className="flex gap-2">
             <li>
-              <a href="https://github.com/neet-007">
+              <a href="https://github.com/neet-007" target="_blank">
                 <Github iconHeight="30" iconWidth="30" theme={theme} />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/moayed-elkamel-0bbb2716a/">
+              <a href="https://www.linkedin.com/in/moayed-elkamel-0bbb2716a/" target="_blank">
                 <Linkedin iconHeight="30" iconWidth="30" theme={theme} />
               </a>
             </li>
             <li>
-              <a href="https://x.com/Moayed_Alkamel">
+              <a href="https://x.com/Moayed_Alkamel" target="_blank">
                 <Twitter iconHeight="30" iconWidth="30" theme={theme} />
               </a>
             </li>
