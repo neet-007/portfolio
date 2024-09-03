@@ -4,6 +4,7 @@ import { Contact } from './components/Contact'
 import { Credintails } from './components/Credintails'
 import { Navbar } from './components/Navbar'
 import { Projects } from './components/Projects'
+import { Slider } from './components/Slider'
 import { useThemeContext } from './context/themeContext'
 import { useScrollToSection } from './hooks/scrollToSection'
 
@@ -19,6 +20,7 @@ function App() {
       <BriefAboutMe />
       <Projects />
       <Credintails />
+      <Slider />
       <Contact />
     </div>
   )

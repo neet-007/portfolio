@@ -26,9 +26,9 @@ const ThemeSwitch: React.FC<ComponentProps<"div"> & { theme: "light" | "dark", t
           :
           <Sun iconWidth="20" iconHeight="20" theme={theme} />
       }
-      <div>
-        <button className="toggle-button" onClick={onClick} ref={toggleRef}>
-          <div className="toggle-switch" data-open="true"></div>
+      <div className="cursor-pointer">
+        <button className="toggle-button cursor-poitner" onClick={onClick} ref={toggleRef}>
+          <div className="toggle-switch cursor-pointer" data-open="true"></div>
         </button>
       </div>
     </div>

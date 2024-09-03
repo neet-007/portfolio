@@ -42,6 +42,10 @@
   transition: background-color 400ms ease-in-out, color 400ms ease-in-out;
 }
 
+.animate-project {
+  animation: project-animation 800ms ease-in-out;
+}
+
 .bg-dark-primary {
   background-color: var(--dark-primary);
 }
@@ -153,6 +157,15 @@ nav[data-hide="false"] {
   padding: 0.5rem 1.5rem;
   cursor: pointer;
   text-transform: capitalize;
+  transition: scale 200ms ease-in-out;
+}
+
+.button:hover,
+.button:focus,
+.button:focus-visible,
+.button:active,
+.button:visited {
+  opacity: 70%;
 }
 
 .button:disabled {
@@ -178,6 +191,10 @@ nav[data-hide="false"] {
 
 .b-radius-1 {
   border-radius: 1rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex {
@@ -483,18 +500,14 @@ nav[data-hide="false"] {
   padding-bottom: 4.5rem;
 }
 
-.fade-in {
-  transition: opacity 500ms ease-in-out, transform 400ms ease-in-out;
-}
+.fade-in {}
 
 .fade-in[data-appear="false"] {
-  transform: translateY(-40%);
   opacity: 0;
 }
 
 .fade-in[data-appear="true"] {
-  transform: translateY(0%);
-  opacity: 1;
+  animation: project-animation 800ms ease-in-out forwards;
 }
 
 .toggle-button {
@@ -538,6 +551,46 @@ nav[data-hide="false"] {
   white-space: normal;
 }
 
+.slider-container {
+  max-width: 800px;
+  display: flex;
+  -webkit-mask: linear-gradient(90deg, transparent 0%, white 20%, white 80%, transparent 100%);
+  mask: linear-gradient(90deg, transparent 0%, white 20%, white 80%, transparent 100%);
+}
+
+.slider-container[data-animate="false"] {
+  flex-wrap: wrap;
+}
+
+.slider-container[data-animate="true"] {
+  overflow: hidden;
+}
+
+.slider-slider {
+  padding-block: 2rem;
+  display: flex;
+  max-width: fit-content;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.slider-slider[data-animate="true"] {
+  flex-wrap: nowrap;
+  animation: slider-animation 20s infinite linear;
+}
+
+.slider-slider:hover[data-animate="true"] {
+  animation-play-state: paused;
+}
+
+.slider-slider>svg {
+  transition: scale 100ms ease-in-out;
+}
+
+.slider-slider>svg:hover {
+  scale: 1.1;
+}
+
 @media only screen and (min-width: 700px) and (max-width:999px) {
   .g-t-columns-2-1fr {
     grid-template-columns: repeat(2, 1fr);
@@ -563,5 +616,28 @@ nav[data-hide="false"] {
 
   .g-t-columns-4-1fr {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@keyframes project-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+
+  70% {
+    transform: translateY(-5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes slider-animation {
+  to {
+    transform: translateX(calc(-50% - 2rem));
   }
 }

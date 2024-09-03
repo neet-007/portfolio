@@ -10,7 +10,7 @@ const Project: FC<ComponentProps<"div"> & {
   theme: "light" | "dark", appear: string,
   gif: string, link: string, github: string,
 }> = ({
-  title, about, theme, appear, img, gif, github, link
+  title, about, theme, appear, img, gif, github, link, className
 }) => {
 
     const [isHovered, setIsHovered] = useState(false);
@@ -19,7 +19,7 @@ const Project: FC<ComponentProps<"div"> & {
       <div className={`flex f-d-column gap-1 w-100 p-1 b-radius-1 p-4 h-100
                     ${theme === "light" ? "bg-light-gray" :
           "bg-dark-gray"}
-        fade-in`} data-appear={appear}>
+        fade-in ${className}`} data-appear={appear}>
         <div className="f-size-sm cap">
           {title}
         </div>
@@ -29,7 +29,7 @@ const Project: FC<ComponentProps<"div"> & {
         <div className="flex f-d-column gap-1 m-top-auto">
           <div>
             <img src={`${img === "" ? "/suffix_tree_still.png" : isHovered ? gif : img}`} alt=""
-              className="b-1-solid-black b-radius-75" onMouseEnter={() => setIsHovered(true)}
+              className="b-1-solid-black b-radius-75 cursor-pointer" onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)} />
           </div>
           <div className="flex justify-content-between align-items-center p-x-4 p-y-2">
@@ -69,12 +69,15 @@ export const Projects: FC<ComponentProps<"div">> = () => {
             return null
           }
           return <Project key={`project-${v.title}-${i}`} title={v.title} about={v.about}
-            img={v.img} gif={v.gif} github={v.github} link={v.link} theme={theme} appear="false" />
+            img={v.img} gif={v.gif} github={v.github} link={v.link} theme={theme}
+            appear={`${i < 3 ? "false" : "true"}`}
+            className={`${i < 3 ? "" : "animate-project"}`} />
         })}
       </div>
       <Button className="button align-self-center w-fit-content h-auto"
         theme={theme}
-        onClick={() => setNumElems(prev => prev * 2)}>
+        onClick={() => setNumElems(prev => prev * 2)}
+        disabled={numElems >= PROJECTS.length}>
         <p>load more</p>
       </Button>
     </div>
