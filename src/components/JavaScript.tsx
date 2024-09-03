@@ -1,6 +1,6 @@
-import React, { ComponentProps } from 'react';
+import { FC, ComponentProps } from 'react';
 
-export const JavaScript: React.FC<ComponentProps<"svg">> = ({ height, width, ...props }) => (
+export const JavaScript: FC<ComponentProps<"svg">> = ({ height, width, ...props }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 1052 1052" {...props}>
     <path fill="#f0db4f" d="M0 0h1052v1052H0z" />
     <path

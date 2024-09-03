@@ -1,4 +1,4 @@
-import React, { FC, ComponentProps, useState, useRef } from "react";
+import { FC, ComponentProps, useState, useRef } from "react";
 import { PROJECTS } from "../constants";
 import { useThemeContext } from "../context/themeContext";
 import { Button } from "./Button";

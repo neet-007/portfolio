@@ -1,6 +1,6 @@
-import React, { ComponentProps } from 'react';
+import { FC, ComponentProps } from 'react';
 
-export const Tailwind: React.FC<ComponentProps<"svg">> = ({ width, height, ...props }) => (
+export const Tailwind: FC<ComponentProps<"svg">> = ({ width, height, ...props }) => (
   <svg height={height} preserveAspectRatio="xMidYMid" width={width} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 153.6" {...props}>
     <linearGradient id="a" x1="-2.778%" y1="32%" y2="67.556%">
       <stop offset="0" stopColor="#2298bd" />

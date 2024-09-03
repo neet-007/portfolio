@@ -1,4 +1,4 @@
-import React, { FC, ComponentProps } from "react";
+import { FC, ComponentProps } from "react";
 
 export const BriefAboutMe: FC<ComponentProps<"div">> = () => {
 

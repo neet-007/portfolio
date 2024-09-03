@@ -1,6 +1,6 @@
-import React, { ComponentProps } from 'react';
+import { FC, ComponentProps } from 'react';
 
-export const Python: React.FC<ComponentProps<"svg">> = ({ ...props }) => (
+export const Python: FC<ComponentProps<"svg">> = ({ ...props }) => (
   <svg width="2500" height="2490" viewBox="0 0 256 255" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" {...props}>
     <defs>
       <linearGradient x1="12.959%" y1="12.039%" x2="79.639%" y2="78.201%" id="a">

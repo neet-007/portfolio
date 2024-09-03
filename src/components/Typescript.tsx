@@ -1,6 +1,6 @@
-import React, { ComponentProps } from 'react';
+import { FC, ComponentProps } from 'react';
 
-export const Typescript: React.FC<ComponentProps<"svg">> = ({ width, height, ...props }) => (
+export const Typescript: FC<ComponentProps<"svg">> = ({ width, height, ...props }) => (
   <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width={width} height={height} {...props}>
     <style>
       {`.st0{fill:#007acc}.st1{fill:#fff}`}

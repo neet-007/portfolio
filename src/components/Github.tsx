@@ -1,6 +1,6 @@
-import React, { ComponentProps } from "react";
+import { FC, ComponentProps } from "react";
 
-export const Github: React.FC<ComponentProps<"svg"> & {
+export const Github: FC<ComponentProps<"svg"> & {
   iconHeight: string, iconWidth: string,
   theme: "light" | "dark", util?: boolean
 }> = ({

@@ -1,4 +1,4 @@
-import React, { ComponentProps, useEffect, useRef } from "react";
+import { FC, ComponentProps, useEffect, useRef } from "react";
 import { JavaScript } from "./JavaScript";
 import { Typescript } from "./Typescript";
 import { Tailwind } from "./Tailwind";
@@ -6,9 +6,8 @@ import { Python } from "./Python";
 import { ReactLogo } from "./ReactLogo";
 import { Django } from "./Django";
 
-export const Slider: React.FC<ComponentProps<"div">> = () => {
+export const Slider: FC<ComponentProps<"div">> = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (!sliderRef.current || window.matchMedia("(prefers-reduced-motion:reduce)").matches) {
       return

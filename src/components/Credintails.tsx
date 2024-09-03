@@ -1,4 +1,4 @@
-import React, { FC, ComponentProps, useRef } from "react";
+import { FC, ComponentProps, useRef } from "react";
 import { useThemeContext } from "../context/themeContext";
 import { Button } from "./Button";
 import { useFadeIn } from "../hooks/fadeIn";

@@ -1,6 +1,6 @@
-import React, { ComponentProps } from "react";
+import { FC, ComponentProps } from "react";
 
-export const Linkedin: React.FC<ComponentProps<"svg"> & {
+export const Linkedin: FC<ComponentProps<"svg"> & {
   iconHeight: string, iconWidth: string,
   theme: "light" | "dark", util?: boolean
 }> = ({

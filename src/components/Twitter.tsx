@@ -1,6 +1,6 @@
-import React, { ComponentProps } from "react";
+import { FC, ComponentProps } from "react";
 
-export const Twitter: React.FC<ComponentProps<"svg"> & {
+export const Twitter: FC<ComponentProps<"svg"> & {
   iconHeight: string, iconWidth: string,
   theme: "light" | "dark", util?: boolean
 }> = ({

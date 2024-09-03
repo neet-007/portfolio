@@ -1,4 +1,4 @@
-import React, { FC, ComponentProps, useRef, useState, useEffect } from "react";
+import { FC, ComponentProps, useRef, useState, useEffect } from "react";
 import { Github } from "./Github";
 import { Linkedin } from "./Linkedin";
 import { Twitter } from "./Twitter";
@@ -16,7 +16,7 @@ function validateEmail(email: string) {
 };
 
 
-const EmailForm: React.FC<ComponentProps<"form"> & { theme: "light" | "dark" }> = ({
+const EmailForm: FC<ComponentProps<"form"> & { theme: "light" | "dark" }> = ({
   theme, ...props }) => {
   const formRef = useRef<HTMLFormElement>(null);
   const [name, setName] = useState("")

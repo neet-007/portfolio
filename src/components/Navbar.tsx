@@ -1,10 +1,10 @@
-import React, { ComponentProps, useEffect, useRef } from "react";
+import { FC, ComponentProps, useEffect, useRef } from "react";
 import { useThemeContext } from "../context/themeContext";
 import { Moon } from "./Moon.tsx";
 import { Sun } from "./Sun.tsx";
 import { useScrollDetector } from "../hooks/scrollDetector.ts";
 
-const ThemeSwitch: React.FC<ComponentProps<"div"> & { theme: "light" | "dark", toggleTheme: () => void }> = ({
+const ThemeSwitch: FC<ComponentProps<"div"> & { theme: "light" | "dark", toggleTheme: () => void }> = ({
   theme, toggleTheme, ...props }) => {
 
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -35,7 +35,7 @@ const ThemeSwitch: React.FC<ComponentProps<"div"> & { theme: "light" | "dark", t
   )
 }
 
-export const Navbar: React.FC<ComponentProps<"nav">> = () => {
+export const Navbar: FC<ComponentProps<"nav">> = () => {
   const { theme, toggleTheme } = useThemeContext();
   const isScrolling = useScrollDetector();
   const navRef = useRef<HTMLDivElement>(null);

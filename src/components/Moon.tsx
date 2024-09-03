@@ -1,7 +1,6 @@
+import { FC, ComponentProps } from "react";
 
-import React, { ComponentProps } from "react";
-
-export const Moon: React.FC<ComponentProps<"svg"> & {
+export const Moon: FC<ComponentProps<"svg"> & {
   iconHeight: string, iconWidth: string,
   theme: "light" | "dark", util?: boolean
 }> = ({

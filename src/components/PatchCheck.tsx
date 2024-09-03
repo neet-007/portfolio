@@ -1,6 +1,6 @@
-import React, { ComponentProps } from 'react';
+import { FC, ComponentProps } from 'react';
 
-export const PatchCheck: React.FC<ComponentProps<"svg"> & {
+export const PatchCheck: FC<ComponentProps<"svg"> & {
   iconWidth: string, iconHeight: string,
   theme: "light" | "dark", util?: boolean
 }> = ({
