@@ -1,10 +1,13 @@
 export const PROJECTS = [
-          { title: "title1", about: "about1", img: "" },
-          { title: "title1", about: "about1", img: "" },
-          { title: "title1", about: "about1", img: "" },
-          { title: "title1", about: "about1", img: "" },
-          { title: "title1", about: "about1", img: "" },
-          { title: "title1", about: "about1", img: "" },
+          { title: "suffix tree visualizer", about: "about1", img: "/suffix_tree_still.png", gif:"/suffix_tree_gif.gif",
+		  github:"https://github.com/neet-007/SuffixTree" ,link:"https://neet-007.github.io/SuffixTree/"},
+          { title: "sorting algorithms visualizer", about: "about1", img: "/sorting_algorithms_still.png", gif:"/sorting_algorithms_gif.gif",
+		  github:"https://github.com/neet-007/Sorting-Algorithms-test", link:"https://neet-007.github.io/Sorting-Algorithms-test/"},
+          { title: "twitter clone", about: "about1", img: "/twitter_clone_still.png", gif:"/twitter_clone_gif.gif",
+		  github:"https://github.com/neet-007/Twiiter-V2-typescript", link:"" },
+          { title: "title1", about: "about1", img: "", gif:"", github:"", link:"" },
+          { title: "title1", about: "about1", img: "", gif:"", github:"", link:"" },
+          { title: "title1", about: "about1", img: "", gif:"", github:"", link:"" },
 
 ]
 
