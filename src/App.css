@@ -294,7 +294,7 @@ nav[data-hide="false"] {
 }
 
 .g-t-columns-4-1fr {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
 
 .f-size-s {
@@ -556,7 +556,7 @@ nav[data-hide="false"] {
 }
 
 .slider-container {
-  max-width: 800px;
+  max-width: 400px;
   display: flex;
   -webkit-mask: linear-gradient(90deg, transparent 0%, white 20%, white 80%, transparent 100%);
   mask: linear-gradient(90deg, transparent 0%, white 20%, white 80%, transparent 100%);
@@ -580,10 +580,13 @@ nav[data-hide="false"] {
 
 .slider-slider[data-animate="true"] {
   flex-wrap: nowrap;
-  animation: slider-animation 20s infinite linear;
+  animation: slider-animation 10s infinite linear;
 }
 
-.slider-slider:hover[data-animate="true"] {
+.slider-slider:hover[data-animate="true"],
+.slider-slider:focus[data-animate="true"],
+.slider-slider:active[data-animate="true"],
+.slider-slider:visited[data-animate="true"] {
   animation-play-state: paused;
 }
 
@@ -591,16 +594,23 @@ nav[data-hide="false"] {
   transition: scale 100ms ease-in-out;
 }
 
-.slider-slider>svg:hover {
+.slider-slider>svg:hover,
+.slider-slider>svg:focus,
+.slider-slider>svg:active,
+.slider-slider>svg:visited {
   scale: 1.1;
 }
 
-@media only screen and (min-width: 700px) and (max-width:999px) {
-  .g-t-columns-2-1fr {
-    grid-template-columns: repeat(2, 1fr);
+@media only screen and (min-width: 830px) and (max-width:1099px) {
+  .slider-container {
+    max-width: 800px;
   }
 
-  .g-t-columns-3-1fr {
+  .slider-slider[data-animate="true"] {
+    animation: slider-animation 30s infinite linear;
+  }
+
+  .g-t-columns-2-1fr {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -609,17 +619,35 @@ nav[data-hide="false"] {
   }
 }
 
-@media only screen and (min-width: 1000px) {
-  .g-t-columns-2-1fr {
+@media only screen and (min-width: 830px) and (max-width: 1239px) {
+
+  .g-t-columns-3-1fr {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .g-t-columns-3-1fr {
-    grid-template-columns: repeat(3, 1fr);
+}
+
+@media only screen and (min-width: 1100px) {
+  .slider-container {
+    max-width: 800px;
+  }
+
+  .slider-slider[data-animate="true"] {
+    animation: slider-animation 30s infinite linear;
+  }
+
+  .g-t-columns-2-1fr {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .g-t-columns-4-1fr {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1240px) {
+  .g-t-columns-3-1fr {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
