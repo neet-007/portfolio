@@ -5,6 +5,7 @@ import { Tailwind } from "./Tailwind";
 import { Python } from "./Python";
 import { ReactLogo } from "./ReactLogo";
 import { Django } from "./Django";
+import { Go } from "./go";
 
 export const Slider: FC<ComponentProps<"div">> = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -27,12 +28,14 @@ export const Slider: FC<ComponentProps<"div">> = () => {
           <Tailwind width={"60"} height={"60"} />
           <Python width={"60"} height={"60"} />
           <Django width={"60"} height={"60"} />
+          <Go width={"60"} height={"60"} />
           <JavaScript width={"60"} height={"60"} />
           <Typescript width={"60"} height={"60"} />
           <ReactLogo width={"60"} height={"60"} />
           <Tailwind width={"60"} height={"60"} />
           <Python width={"60"} height={"60"} />
           <Django width={"60"} height={"60"} />
+          <Go width={"60"} height={"60"} />
         </div>
       </div>
     </div>
