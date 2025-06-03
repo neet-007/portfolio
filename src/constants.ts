@@ -1,8 +1,8 @@
 export const PROJECTS = [
 	{
 		title: "glox", about: `an interpreter for lox language, featuring a full tree-walk interpreter
-		  with modules for scanning, parsing, resolving, and evaluation, its written in go and only uses the standard library`, img: "/glox_still.png",
-		gif: "/glox_gif.gif", github: "https://github.com/neet-007/glox", link: ""
+		  with modules for scanning, parsing, resolving, and evaluation, its written in go and only uses the standard library`, img: "public/glox_still.png",
+		gif: "public/glox_gif.gif", github: "https://github.com/neet-007/glox", link: ""
 	},
 	{
 		title: "text editor in c", about: `is a lightweight text editor written in C, based on the Kilo editor.
